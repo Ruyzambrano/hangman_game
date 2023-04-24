@@ -1,7 +1,10 @@
 class Game_String:
 
     def __init__(self):
-        self.image = '''
+        self.lives = 0
+        self.lose = False
+        self.win = False
+        self.image = ['''
         ___________
         |        |
         |        
@@ -12,13 +15,8 @@ class Game_String:
      
      Lives Left: 6
 
+     ''', 
      '''
-
-    def __str__(self):
-        return self.image
-    
-    def wrong_guess1(self):
-        self.image = '''
         ___________
         |        |
         |        O
@@ -29,10 +27,8 @@ class Game_String:
      
      Lives Left: 5
      
-     '''
-
-    def wrong_guess2(self):
-        self.image = '''
+     ''',
+    '''
         ___________
         |        |
         |        O
@@ -43,10 +39,8 @@ class Game_String:
      
      Lives Left: 4
 
-     '''
-        
-    def wrong_guess3(self):
-        self.image = '''
+     ''',
+    '''
         ___________
         |        |
         |        O
@@ -57,10 +51,8 @@ class Game_String:
      
      Lives Left: 3
 
-     '''
-        
-    def wrong_guess4(self):
-        self.image = '''
+     ''',
+    '''
         ___________
         |        |
         |        O
@@ -71,10 +63,8 @@ class Game_String:
     
     Lives Left: 2
 
+     ''',
      '''
-        
-    def wrong_guess5(self):
-        self.image = '''
         ___________
         |        |
         |        O
@@ -85,7 +75,10 @@ class Game_String:
 
      Lives Left: 1
 
-     '''
+     ''',]
+
+    def __str__(self):
+        return self.image
         
     def game_over(self):
         self.image = '''
@@ -105,4 +98,13 @@ class Game_String:
     ____________________________________________
     
     '''
+        self.lose = True
     
+    def lose_life(self):
+        self.lives += 1
+        if self.lives == 6:
+            self.game_over()
+            print(self.image)
+
+    def game_win(self):
+        self.win = True
