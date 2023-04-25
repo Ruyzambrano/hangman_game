@@ -80,7 +80,8 @@ def main():
                     hangman_game.game_win()
             
             print(f'\t\tThe word was {hangman_words.random_word}')
-
+        elif choice == 'w':
+            
         elif choice == 'i':
             print('\n\t\t', end='')
             print(colored('Welcome to Hangman!', 'blue', attrs=['bold', 'underline']))
