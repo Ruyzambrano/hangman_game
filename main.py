@@ -31,7 +31,6 @@ def main():
                 else:
                     word_display.append(hangman_words.random_word[i])
             guessing_word = list(hangman_words.random_word)
-            print(hangman_words.random_word)
             guessed_letters = []
 
             while hangman_game.lose == False and hangman_game.win == False:
@@ -79,7 +78,9 @@ def main():
                     print(colored('n ', 'light_magenta', attrs=['bold']), end='')
                     print(colored('!', 'magenta', attrs=['bold']))
                     hangman_game.game_win()
-                        
+            
+            print(f'\t\tThe word was {hangman_words.random_word}')
+
         elif choice == 'i':
             print('\n\t\t', end='')
             print(colored('Welcome to Hangman!', 'blue', attrs=['bold', 'underline']))
@@ -107,4 +108,4 @@ Good luck and have fun playing Hangman!''', 'blue'))
             print('Invalid option. Please Try again.')
 
 if __name__ == '__main__':
-      main()
+    main()
