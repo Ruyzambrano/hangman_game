@@ -7,6 +7,9 @@ class Load_Words:
         with open(self.file, 'r') as file:
             self.words = file.read().split('\n')
         self.random_word = random.choice(self.words)
+    
+    def get_random_word(self):
+        return self.random_word
 
     
     
